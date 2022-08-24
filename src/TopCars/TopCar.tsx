@@ -1,3 +1,5 @@
+import React from 'react';
+
 type TopCar = {
     topCar: Array<TopCarType>
 }
