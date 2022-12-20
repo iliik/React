@@ -1,44 +1,43 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import {NewComponent} from "./NewComponent";
-import {TopCar} from "./TopCars/TopCar";
-// import {Button} from "./Button/Button";
-import {UseState} from "./UseStat/UseStat";
-import {Filter} from "./Filters/Filter";
-import {NewFilter} from "./NewFilter";
-import {FullInput} from "./Input/FullInput";
-import {Input} from "./Input/Input";
-import {Knopka} from "./Input/Knopka";
 
+import {Off} from "./OnOff/On";
+import {message} from "antd";
+import {Clock} from "./clock/Clock";
+
+// type Props = {
+//     on: boolean
+//     onChange:(on:boolean)=> void
+// }
+//
+// function StartTime() {
+//     return null;
+// }
 
 function App() {
-    let [message, setMessage] = useState([
-        {message: 'message1'},
-        {message: 'message2'},
-        {message: 'message3'}
-    ])
+    // let [message, setMessage] = useState([
+    //     {message: 'message1'},
+    //     {message: 'message2'},
+    //     {message: 'message3'}
+    // ])
+    //
+    // let [title, setTitle] = useState('')
+    //
+    // const addMessage = (title: string) => {
+    //     let newMessage = {message: title}
+    //     setMessage([newMessage, ...message])
+    // }
+    //
+    // const callBackButtonHandler = () => {
+    //     addMessage(title)
+    //     setTitle('')
+    // }
 
-    let [title, setTitle] = useState('')
 
-    const addMessage = (title: string) => {
-        let newMessage = {message: title}
-        setMessage([newMessage, ...message])
-    }
-
-    const callBackButtonHandler = () => {
-        addMessage(title)
-        setTitle('')
-    }
     return (
         <div className={'App'}>
-            <Input setTitle={setTitle} title={title}/>
-            <Knopka name={'+'} callBack={callBackButtonHandler}/>
+            <Clock/>
 
-            {message.map((el, index) => {
-                return (
-                    <div key={index}>{el.message}</div>
-                )
-            })}
         </div>
     )
 }
