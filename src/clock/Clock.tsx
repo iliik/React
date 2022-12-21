@@ -39,3 +39,19 @@ export const Clock: React.FC<PropsType> = (props) => {
 export type ClockViewPropsType = {
     date: Date
 }
+
+export const SetTimout = () => {
+    const [text, setText] = useState('')
+    useEffect(() => {
+        const timoutId = setTimeout(() => {
+            console.log('Timout Expired')
+            setText('3second passed')
+        }, 300)
+        return () => {
+            clearTimeout(timoutId)
+        }
+    }, [text])
+    return <>
+        text:{text}
+      </>
+}
